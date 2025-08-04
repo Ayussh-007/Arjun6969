@@ -1,0 +1,134 @@
+/* === GLOBAL STYLES === */
+body {
+    background: linear-gradient(to right, #ffccdd, #ffe6f0);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding-top: 90px;
+  }
+  
+  /* === NAVBAR === */
+  .bg-pink {
+    background-color: #ff6699 !important;
+  }
+  
+  .navbar {
+    min-height: 70px;
+    padding: 0.5rem 1rem;
+    border-bottom: none;
+  
+    /* 🧊 3D glass style */
+    background: linear-gradient(to right, #ff5e99, #ff80b3) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  
+    box-shadow:
+      0 4px 12px rgba(255, 105, 180, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+  
+    border-radius: 0 0 12px 12px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .nav-link {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 12px 16px;
+    text-align: center;
+    color: white !important;
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Nav link hover */
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-radius: 8px;
+    box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.3);
+  }
+  
+  /* === DROPDOWN === */
+  .dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(10px);
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+    display: block !important;
+    pointer-events: none;
+  
+    /* ✨ Glassmorphism */
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dropdown:hover .dropdown-menu,
+  .dropdown.show .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+  }
+  
+  .dropdown-item {
+    font-size: 1rem;
+    padding: 10px 16px;
+    transition: background-color 0.2s ease;
+    color: #000;
+    border-radius: 6px;
+  }
+  
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000;
+  }
+  
+  /* === RESPONSIVE (Phones/Tablets) === */
+  @media (max-width: 1000px) {
+    .nav-link {
+      font-size: 1.8rem !important;
+      padding: 16px 20px !important;
+    }
+  
+    .dropdown-menu {
+      font-size: 1.8rem !important;
+      min-width: 230px !important;
+    }
+  
+    .dropdown-item {
+      padding: 14px 30px !important;
+    }
+  
+    .navbar {
+      min-height: 120px !important;
+    }
+  }
+  
+  /* === MAIN CONTENT === */
+  .main-content {
+    margin-top: 80px;
+    padding: 0 1rem;
+  }
+  
+  /* === NAV DROPDOWN CENTERING === */
+  .nav-item.dropdown {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    left: 50% !important;
+    transform: translateX(-50%) translateY(10px);
+  }
+  
+  /* Remove active blue state */
+  .nav-link:focus,
+  .nav-link:active {
+    background-color: transparent !important;
+    color: white !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  

@@ -1,0 +1,20 @@
+body {
+    background: linear-gradient(to right, #ffccdd, #ffe6f0);
+    font-family: 'Segoe UI', sans-serif;
+    padding-top: 100px;
+  }
+  
+  .bg-pink {
+    background-color: #ff6699 !important;
+  }
+  
+  .navbar .nav-link {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white !important;
+  }
+  
+  .container {
+    max-width: 600px;
+  }
+  

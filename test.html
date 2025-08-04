@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cloudinary Test</title>
+  </head>
+  <body>
+    <input type="file" id="fileInput" />
+    <button id="uploadBtn">Upload</button>
+    <script>
+      document.getElementById("uploadBtn").onclick = async () => {
+        const file = document.getElementById("fileInput").files[0];
+        if (!file) return alert("Select a file!");
+
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", "arjun6969"); // 🔁 replace
+        formData.append("folder", "vault");
+
+        try {
+          const res = await fetch(
+            "https://api.cloudinary.com/v1_1/dnfdn6eu3/upload",
+            {
+              method: "POST",
+              body: formData,
+            }
+          );
+          const data = await res.json();
+          console.log(data);
+          alert("Success!");
+        } catch (err) {
+          console.error("Error:", err);
+          alert("❌ Failed!");
+        }
+      };
+    </script>
+  </body>
+</html>

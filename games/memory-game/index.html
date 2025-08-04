@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0"
+    />
+
+    <title>Memory Game</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="preload" as="image" href="images/card1.png" />
+    <link rel="preload" as="image" href="images/card2.png" />
+    <link rel="preload" as="image" href="images/card3.png" />
+    <link rel="preload" as="image" href="images/card4.png" />
+    <link rel="preload" as="image" href="images/card5.png" />
+    <link rel="preload" as="image" href="images/card6.png" />
+    <link rel="preload" as="image" href="images/card7.png" />
+    <link rel="preload" as="image" href="images/card8.png" />
+    <!-- ... repeat for all cards and back.png -->
+  </head>
+  <body style="background-color: #fac9dc">
+    <!-- 🎵 Audio -->
+    <audio id="bgMusic" src="sounds/bg-music.mp3" loop preload="auto"></audio>
+    <audio id="flipSound" src="sounds/flip.mp3" preload="auto"></audio>
+    <audio id="correctSound" src="sounds/correct.mp3" preload="auto"></audio>
+    <audio
+      id="incorrectSound"
+      src="sounds/incorrect.mp3"
+      preload="auto"
+    ></audio>
+
+    <div class="container py-4">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+          <!-- 🧠 Intro Modal -->
+          <div class="modal show" id="startModal">
+            <div class="modal-dialog">
+              <div class="modal-content p-4 text-center">
+                <h2>🧠 Memory Game</h2>
+                <p id="typedText" class="typewriter"></p>
+                <button
+                  id="startBtn"
+                  class="btn btn-primary mt-3"
+                  style="display: none"
+                >
+                  Start Game
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 🎉 Win Modal -->
+          <div class="modal" id="winModal">
+            <div class="modal-dialog">
+              <div class="modal-content p-4 text-center">
+                <h2>🎉 You Won!</h2>
+                <p>Moves: <span id="finalMoves"></span></p>
+                <button id="continueBtn" class="btn btn-success mt-2">
+                  Continue
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ✅ Match Popup -->
+          <div class="match-popup" id="matchPopup">
+            <p id="matchMessage">You found a match!</p>
+          </div>
+
+          <!-- 🕹️ Game UI -->
+          <div
+            class="game-header d-flex justify-content-between align-items-center my-3"
+          >
+            <span id="moves">Moves: 0</span>
+            <button id="restart" class="btn btn-outline-secondary btn-sm">
+              🔄 Restart
+            </button>
+          </div>
+
+          <div
+            class="game-board d-grid gap-2"
+            id="gameBoard"
+            style="grid-template-columns: repeat(4, 1fr)"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS (optional for animations) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
